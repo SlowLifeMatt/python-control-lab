@@ -64,12 +64,26 @@ print(f"The dog's age in dog years is{dog_age}")
 #      a:
 #      b:
 #      c:
+a = float(input("Enter the lengths of side A of a triangle: "))
+b = float(input("Enter the lengths of side B of a triangle: "))
+c = float(input("Enter the lengths of side C of a triangle: "))
 # 2. Write the code that determines if the triangle is:
 #      equalateral - all three sides are equal in length
 #      scalene - all three sides are unequal in length
 #      isosceles - two sides are the same length
+
+if a == b == c:
+    triangle_type = "equalateral"
+elif a == b or a == c or b == c:
+    triangle_type = "isosceles"
+else:
+    triangle_type = "scalene"
+
+
 # 3. Print a message such as:
 #      - A triangle with sides of <a>, <b> & <c> is a <type of triangle> triangle
+
+print(f" A triangle with sides of {a}, {b} & {c} is a {triangle_type} triangle")
 
 
 
