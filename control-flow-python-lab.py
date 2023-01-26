@@ -31,7 +31,7 @@ while phrase != 'quit':
     phrase = input("Enter a word or phrase: ")
 # 2. Print the following message:
 #      - What you entered is xx characters long
-    # print("What you entered is", len(phrase), "characters long")
+print("What you entered is", len(phrase), "characters long")
 # 3. Return to step 1, unless the word 'quit' was entered.
 
 
@@ -53,7 +53,7 @@ else:
 # 3. Prints the answer in the following format:
 #      The dog's age in dog years is xx
 # Hint:  Use the int() function to convert the string returned from input() into an integer
-# print(f"The dog's age in dog years is{dog_age}")
+print(f"The dog's age in dog years is{dog_age}")
 
 
 # exercise-04 What kind of Triangle?
@@ -83,7 +83,7 @@ else:
 # 3. Print a message such as:
 #      - A triangle with sides of <a>, <b> & <c> is a <type of triangle> triangle
 
-# print(f" A triangle with sides of {a}, {b} & {c} is a {triangle_type} triangle")
+print(f" A triangle with sides of {a}, {b} & {c} is a {triangle_type} triangle")
 
 
 
@@ -101,13 +101,28 @@ else:
 #      etc.
 # Hint: The next number is found by adding the two numbers before it
 
+# Note: This way takes forever to process. Next option is super fast
+# def term(n):
+#   if (n==0) or (n==1):
+#     return(1)
+#   else:
+#     return term(n-1)+term(n-2)
+# for i in range(50):
+#   print(i+1,term(i))
+
 def term(n):
-  if (n==0) or (n==1):
-    return(1)
-  else:
-    return term(n-1)+term(n-2)
-for i in range(50):
-  print(i+1,term(i))
+    a=0
+    b=1
+    if n == 1:
+        print(a)
+    else:
+        for i in range(2,n):
+            c = a + b
+            a = b
+            b = c
+            print(c)
+print(term(300))
+
 
 
 # exercise-06 What's the  Season?
@@ -115,6 +130,7 @@ for i in range(50):
 # Write the code that:
 # 1. Prompts the user to enter the month (as three characters):
 #      Enter the month of the season (Jan - Dec):
+month = input("Input the month")
 # 2. Then promptshtt the user to enter the day of the month:
 #      Enter the day of the month:
 # 3. Calculate what season it is based upon this chart:
