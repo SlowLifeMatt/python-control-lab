@@ -31,7 +31,7 @@ while phrase != 'quit':
     phrase = input("Enter a word or phrase: ")
 # 2. Print the following message:
 #      - What you entered is xx characters long
-    print("What you entered is", len(phrase), "characters long")
+    # print("What you entered is", len(phrase), "characters long")
 # 3. Return to step 1, unless the word 'quit' was entered.
 
 
@@ -53,7 +53,7 @@ else:
 # 3. Prints the answer in the following format:
 #      The dog's age in dog years is xx
 # Hint:  Use the int() function to convert the string returned from input() into an integer
-print(f"The dog's age in dog years is{dog_age}")
+# print(f"The dog's age in dog years is{dog_age}")
 
 
 # exercise-04 What kind of Triangle?
@@ -83,7 +83,7 @@ else:
 # 3. Print a message such as:
 #      - A triangle with sides of <a>, <b> & <c> is a <type of triangle> triangle
 
-print(f" A triangle with sides of {a}, {b} & {c} is a {triangle_type} triangle")
+# print(f" A triangle with sides of {a}, {b} & {c} is a {triangle_type} triangle")
 
 
 
@@ -101,6 +101,13 @@ print(f" A triangle with sides of {a}, {b} & {c} is a {triangle_type} triangle")
 #      etc.
 # Hint: The next number is found by adding the two numbers before it
 
+def term(n):
+  if (n==0) or (n==1):
+    return(1)
+  else:
+    return term(n-1)+term(n-2)
+for i in range(50):
+  print(i+1,term(i))
 
 
 # exercise-06 What's the  Season?
