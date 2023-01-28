@@ -121,7 +121,7 @@ def term(n):
             a = b
             b = c
             print(c)
-print(term(300))
+print(term(50))
 
 
 
@@ -130,13 +130,32 @@ print(term(300))
 # Write the code that:
 # 1. Prompts the user to enter the month (as three characters):
 #      Enter the month of the season (Jan - Dec):
-month = input("Input the month")
+month = input("Input the month(Three characters/Jan - Dec): ")
 # 2. Then promptshtt the user to enter the day of the month:
 #      Enter the day of the month:
+day = input("Input the day(1-31): ")
 # 3. Calculate what season it is based upon this chart:
 #      Dec 21 - Mar 19: Winter
 #      Mar 20 - Jun 20: Spring
 #      Jun 21 - Sep 21: Summer
 #      Sep 22 - Dec 20: Fall
+if month in ('January', 'February', 'March'):
+	season = 'winter'
+elif month in ('April', 'May', 'June'):
+	season = 'spring'
+elif month in ('July', 'August', 'September'):
+	season = 'summer'
+else:
+	season = 'fall'
+
+if (month == 'March') and (day > 19):
+	season = 'spring'
+elif (month == 'June') and (day > 20):
+	season = 'summer'
+elif (month == 'September') and (day > 21):
+	season = 'fall'
+elif (month == 'December') and (day > 20):
+	season = 'winter'
 # 4. Print the result as follows:
 #      <Mmm> <dd> is in <season>
+print(f'{month} {day} is in {season}')
